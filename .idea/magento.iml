@@ -236,6 +236,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-bundle-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-bundle-import-export" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-bundle-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cache-invalidate" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-captcha" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cardinal-commerce" />
@@ -251,6 +252,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-rule" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-rule-configurable" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-rule-graph-ql" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-rule-sample-data" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-search" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-url-rewrite" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-catalog-url-rewrite-graph-ql" />
@@ -261,6 +264,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms-page-builder-analytics" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms-url-rewrite" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cms-url-rewrite-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-compare-list-graph-ql" />
@@ -269,6 +273,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-configurable-product" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-configurable-product-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-configurable-product-sales" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-configurable-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-contact" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cookie" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-cron" />
@@ -279,6 +284,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-customer-downloadable-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-customer-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-customer-import-export" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-customer-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-deploy" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-developer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-dhl" />
@@ -287,6 +293,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-downloadable" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-downloadable-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-downloadable-import-export" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-downloadable-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-eav" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-eav-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-elasticsearch" />
@@ -306,6 +313,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-grouped-import-export" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-grouped-product" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-grouped-product-graph-ql" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-grouped-product-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-import-export" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-indexer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-instant-purchase" />
@@ -426,6 +434,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-msrp" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-msrp-configurable-product" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-msrp-grouped-product" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-msrp-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-multishipping" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-mysql-mq" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-new-relic-reporting" />
@@ -433,6 +442,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-newsletter-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-offline-payments" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-offline-shipping" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-offline-shipping-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-open-search" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-page-builder" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-page-builder-admin-analytics" />
@@ -445,6 +455,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-paypal-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-persistent" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-product-alert" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-product-links-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-product-video" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-quote" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-quote-analytics" />
@@ -483,6 +494,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-review" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-review-analytics" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-review-graph-ql" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-review-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-robots" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-rss" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-rule" />
@@ -491,6 +503,8 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-inventory" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-rule" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-rule-sample-data" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sales-sequence" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-search" />
@@ -508,11 +522,14 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-swatches" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-swatches-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-swatches-layered-navigation" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-swatches-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-tax" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-tax-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-tax-import-export" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-tax-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-theme" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-theme-graph-ql" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-theme-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-translation" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-two-factor-auth" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-ui" />
@@ -531,9 +548,12 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-weee" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-weee-graph-ql" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-widget-sample-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-wishlist" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-wishlist-analytics" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-wishlist-graph-ql" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/module-wishlist-sample-data" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/sample-data-media" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/theme-adminhtml-backend" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/theme-frontend-blank" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/magento/theme-frontend-luma" />

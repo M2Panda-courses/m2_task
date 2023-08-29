@@ -572,6 +572,26 @@
       <path value="$PROJECT_DIR$/src/vendor/magento/framework-message-queue" />
       <path value="$PROJECT_DIR$/src/vendor/magento/module-url-rewrite" />
       <path value="$PROJECT_DIR$/src/vendor/magento/module-media-content-cms" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-tax-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-widget-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-sales-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-sales-rule-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-product-links-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-swatches-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-customer-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-msrp-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-theme-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-offline-shipping-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-wishlist-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/sample-data-media" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-grouped-product-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-catalog-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-cms-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-downloadable-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-bundle-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-configurable-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-review-sample-data" />
+      <path value="$PROJECT_DIR$/src/vendor/magento/module-catalog-rule-sample-data" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
