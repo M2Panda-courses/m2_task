@@ -109,7 +109,7 @@ class IsCorrectQtyCondition implements IsProductSalableForRequestedQtyInterface
         if ($this->isMaxSaleQuantityCheckFailed($stockItemConfiguration, $requestedQty)) {
             return $this->createErrorResult(
                 'is_correct_qty-max_sale_qty',
-                __('The requested qty exceeds the maximum qty allowed in shopping cart')
+                __('Some of the products are not available')
             );
         }
 
