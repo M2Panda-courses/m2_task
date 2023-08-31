@@ -32,7 +32,7 @@ class AddAttributePatch implements DataPatchInterface, PatchRevertableInterface
             Product::ENTITY,
             'task_3',
             [
-                'type' => 'varchar',
+                'type' => 'text',
                 'label' => 'Task_3',
                 'input' => 'select', // Input type
                 'source' => \Aus\Task3\Model\Source\BlockOptions::class, // Custom source model

@@ -36,7 +36,7 @@ class UpdateSizeBlockTable implements DataPatchInterface
 
             $data = [
                 'title' => $cmsBlock->getTitle(),
-                'value' => $cmsBlock->getIdentifier(),
+                'value' => $cmsBlock->getContent(),
             ];
            $block->setData($data);
            $block->save();

@@ -23,7 +23,7 @@ class BlockOptions extends AbstractSource implements SourceInterface, OptionSour
         $collection = $this->collectionFactory->create();
 
         foreach ($collection as $item) {
-            $options[] = ['value' => $item->getId(), 'label' => $item->getValue()];
+            $options[] = ['value' => $item->getValue(), 'label' => $item->getTitle()];
         }
 
         return $options;
@@ -34,7 +34,7 @@ class BlockOptions extends AbstractSource implements SourceInterface, OptionSour
         $result = [];
 
         foreach (self::getOptionArray() as $index => $value) {
-            $result[] = ['value' => $index, 'label' => $value['label']];
+            $result[] = ['value' => $value['value'], 'label' => $value['label']];
         }
 
         return $result;
