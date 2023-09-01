@@ -203,6 +203,15 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
         );
 
         $this->addColumn(
+            'quote',
+            [
+                'header' => __('Quote'),
+                'type' => 'text',
+                'renderer' => \Magento\Review\Block\Adminhtml\Grid\Renderer\Rating::class
+            ]
+        );
+
+        $this->addColumn(
             'nickname',
             [
                 'header' => __('Nickname'),
