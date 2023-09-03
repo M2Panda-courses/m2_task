@@ -11,7 +11,7 @@ interface ReviewLocationRepositoryInterface
      * @param array $data
      * @return mixed
      */
-    public function setReview($data);
+    public function setReview(array $data);
 
     /**
      * @param ReviewLocationInterface $reviewLocation

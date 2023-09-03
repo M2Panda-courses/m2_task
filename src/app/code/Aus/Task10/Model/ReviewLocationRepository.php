@@ -34,7 +34,7 @@ class ReviewLocationRepository implements ReviewLocationRepositoryInterface
 
         return $reviewLocation;
     }
-    public function setReview($data)
+    public function setReview(array $data)
     {
         if (!isset($data['title'])) {
             $data['title'] = 'Some title';
@@ -46,8 +46,6 @@ class ReviewLocationRepository implements ReviewLocationRepositoryInterface
         unset($data['location']);
         $reviewLocation->setLocation($location);
         $review->setData($data);
-
-
 
         try{
             $review->save();
