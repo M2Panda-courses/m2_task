@@ -9,6 +9,7 @@
                     <argument name="css_class" xsi:type="string">task_3</argument>
                     <argument name="at_label" xsi:type="string">default</argument>
                     <argument name="add_attribute" xsi:type="string">itemprop="task_3"</argument>
+                    <argument name="size_guide_vm" xsi:type="object">Aus\Task9\ViewModel\SizeGuide</argument>
                 </arguments>
             </block>
         </referenceContainer>

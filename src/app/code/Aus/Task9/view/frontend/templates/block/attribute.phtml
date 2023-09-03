@@ -10,6 +10,7 @@
  * Product view template
  *
  * @var $block \Magento\Catalog\Block\Product\View\Description
+ * @var $sizeGuideVm \Aus\Task9\ViewModel\SizeGuide
  */
 ?>
 <?php
@@ -26,6 +27,7 @@ $_className = $block->getCssClass();
 $_attributeLabel = $block->getAtLabel();
 $_attributeType = $block->getAtType();
 $_attributeAddAttribute = $block->getAddAttribute();
+$sizeGuideVm = $block->getData('size_guide_vm');
 
 $renderLabel = true;
 // if defined as 'none' in layout, do not render
@@ -43,6 +45,8 @@ if ($_attributeType && $_attributeType == 'text') {
 } else {
     $_attributeValue = $_helper->productAttribute($_product, $_product->$_call(), $_code);
 }
+
+$cmsBlock = $sizeGuideVm->getBlockByIdentifier($_attributeValue);
 ?>
 
 <?php if ($_attributeValue) :?>
@@ -51,7 +55,7 @@ if ($_attributeType && $_attributeType == 'text') {
             <strong class="type"><?= $block->escapeHtml($_attributeLabel) ?></strong>
         <?php endif; ?>
         <?php
-        echo html_entity_decode($_attributeValue);
+        echo html_entity_decode($cmsBlock->getContent());
         ?>
     </div>
 <?php endif; ?>
