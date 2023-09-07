@@ -30,7 +30,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Magento_Sales::sales_order</aclResource>
-        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="sales_order_grid_data_source">
+        <dataProvider class="Aus\Task11\Ui\Component\Listing\Provider\DataProvider" name="sales_order_grid_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>main_table.entity_id</primaryFieldName>
@@ -263,6 +263,23 @@
                 <filter>textRange</filter>
                 <label translate="true">Total Refunded</label>
                 <visible>false</visible>
+            </settings>
+        </column>
+        <column name="status" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <filter>select</filter>
+                <options class="Magento\Sales\Ui\Component\Listing\Column\Status\Options"/>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="erp_sync_status" class="Aus\Task11\Ui\Component\Listing\Column\ErpSyncStatus">
+            <settings>
+                <sortable>false</sortable>
+                <filter>select</filter>
+                <options class="Aus\Task11\Ui\Component\Listing\Column\Status\Options"/>
+                <dataType>select</dataType>
+                <label translate="true">ERP Sync Status</label>
             </settings>
         </column>
         <actionsColumn name="actions" class="Magento\Sales\Ui\Component\Listing\Column\ViewAction">
