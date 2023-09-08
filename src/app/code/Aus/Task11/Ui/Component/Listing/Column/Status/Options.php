@@ -44,9 +44,6 @@ class Options implements OptionSourceInterface
         return $this->getOptionArray();
     }
 
-
-
-
     public function getOptionArray()
     {
         $options = [];
@@ -54,13 +51,11 @@ class Options implements OptionSourceInterface
 
         foreach ($collection as $item) {
             $erpStatus = $item->getErpStatus();
-            // Додавайте в масив опцій лише унікальні значення
             if (!isset($options[$erpStatus])) {
                 $options[$erpStatus] = $erpStatus;
             }
         }
 
-        // Перетворіть асоціативний масив у потрібний формат для опцій
         $formattedOptions = [];
         foreach ($options as $value => $label) {
             $formattedOptions[] = ['value' => $value, 'label' => $label];
