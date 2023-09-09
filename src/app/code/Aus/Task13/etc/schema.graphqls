@@ -1,0 +1,8 @@
+
+type Query {
+  exported(id: Int!, exported: Boolean!): Exported! @resolver(class: "Aus\\Task13\\Model\\Resolver\\Exported")
+}
+
+type Exported {
+  message: String!
+}
