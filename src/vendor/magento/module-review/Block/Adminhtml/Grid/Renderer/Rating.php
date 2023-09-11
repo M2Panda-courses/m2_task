@@ -30,9 +30,6 @@ class Rating extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
      */
     public function render(\Magento\Framework\DataObject $row)
     {
-//        $row->getReviewId();
-//        $this->ratingCollection->addFieldToFilter('review_id', $row->getReviewId());
-        $f = $this->_ratingFactory->create()->getReviewSummary($row->getReviewId());
-        return $f->getData('sum')/20;
+        return $this->_ratingFactory->create()->getReviewSummary($row->getReviewId())->getData('sum')/20;
     }
 }
