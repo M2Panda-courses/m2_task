@@ -25,11 +25,11 @@ class ReviewLocation extends AbstractModel implements ReviewLocationInterface
 
     public function getReviewId()
     {
-        return $this->getData(self::REVIEWID);
+        return $this->getData(self::REVIEW_ID);
     }
 
     public function setReviewId($reviewId)
     {
-        $this->setData(self::REVIEWID, $reviewId);
+        $this->setData(self::REVIEW_ID, $reviewId);
     }
 }

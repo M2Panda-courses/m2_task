@@ -34,6 +34,12 @@ class ReviewLocationRepository implements ReviewLocationRepositoryInterface
 
         return $reviewLocation;
     }
+
+    /**
+     * @param array $data
+     * @return mixed
+     * @throws CouldNotSaveException
+     */
     public function setReview(array $data)
     {
         if (!isset($data['title'])) {

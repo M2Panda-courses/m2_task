@@ -5,7 +5,7 @@ interface ReviewLocationInterface
 {
 
     const LOCATION = 'location';
-    const REVIEWID = 'review_id';
+    const REVIEW_ID = 'review_id';
 
 
     /**
