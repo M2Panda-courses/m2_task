@@ -61,6 +61,13 @@ class Collection extends SearchResult
             $this->addFilterToMap($columnInfo['COLUMN_NAME'], 'main_table.' . $columnInfo['COLUMN_NAME']);
         }
 
+        $this->getSelect()
+            ->joinLeft(
+                ['erp' => $this->getTable('sales_order_erp_status')],
+                'main_table.entity_id = erp.order_id',
+                ['erp.erp_status']
+            );
+
         return $this;
     }
 
