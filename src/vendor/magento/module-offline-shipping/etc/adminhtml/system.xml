@@ -120,11 +120,11 @@
             <group id="freeshipping" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Free Shipping</label>
                 <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" canRestore="1">
-                    <label>Enabled</label>
+                    <label>Free shipping is enabled (yes/no)</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="free_shipping_subtotal" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1">
-                    <label>Minimum Order Amount</label>
+                    <label>Free shipping minimum spend</label>
                     <validate>validate-number validate-zero-or-greater</validate>
                 </field>
                 <field id="tax_including" translate="label" sortOrder="5" type="select" showInDefault="1" showInWebsite="1" canRestore="1">
