@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.form.content">
+            <container name="task.product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku" after="product.info.addtocart">
+                <container name="product.info.type" before="-"/>
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.stock" template="Aus_Task8::stock/attribute.phtml" after="product.info.type">
+                    <arguments>
+                        <argument name="stock_level_vm" xsi:type="object">Aus\Task8\ViewModel\StockLevel</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="product.info.simple" display="false"/>
+    </body>
+</page>
