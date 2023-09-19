@@ -355,6 +355,7 @@ return [
         'Aus_Task5' => 1,
         'Aus_Task7' => 1,
         'Aus_Task8' => 1,
+        'Aus_Task9' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1
