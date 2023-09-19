@@ -2,7 +2,7 @@
 namespace Aus\Task15\Cron;
 
 use Magento\Framework\Api\SearchCriteriaBuilder;
-use Psr\Log\LoggerInterface;
+use Aus\Task19\Logger\AttributeCleanLogger;
 class Cleanup
 {
     /**
@@ -17,7 +17,7 @@ class Cleanup
     public function __construct(
         \Magento\Catalog\Api\ProductAttributeRepositoryInterface $attributeRepository,
         SearchCriteriaBuilder $searchCriteriaBuilder,
-        LoggerInterface $logger,
+        AttributeCleanLogger $logger,
     ) {
         $this->attributeRepository = $attributeRepository;
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;

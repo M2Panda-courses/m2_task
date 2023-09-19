@@ -1,0 +1,13 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Aus\Task19\Logger\AttributeCleanLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">product_attribute_clean</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="file" xsi:type="object">Aus\Task19\Logger\Handler\CustomHandler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+
+
+
