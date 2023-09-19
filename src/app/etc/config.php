@@ -352,6 +352,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Aus_Task13' => 1,
         'Aus_Task15' => 1,
+        'Aus_Task11' => 1,
         'Aus_Task3' => 1,
         'Aus_Task4' => 1,
         'Aus_Task5' => 1,
