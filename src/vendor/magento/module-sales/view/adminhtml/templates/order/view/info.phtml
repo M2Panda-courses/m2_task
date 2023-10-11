@@ -29,6 +29,7 @@ $orderStoreDate = $block->formatDate(
 $customerUrl = $block->getCustomerViewUrl();
 
 $allowedAddressHtmlTags = ['b', 'br', 'em', 'i', 'li', 'ol', 'p', 'strong', 'sub', 'sup', 'ul'];
+$erpStatus = $block->getErpStatus();
 ?>
 
 <section class="admin__page-section order-view-account-information">
@@ -65,6 +66,10 @@ $allowedAddressHtmlTags = ['b', 'br', 'em', 'i', 'li', 'ol', 'p', 'strong', 'sub
                     <th><?= $block->escapeHtml(__('Order Status')) ?></th>
                     <td><span id="order_status"><?= $block->escapeHtml($order->getStatusLabel()) ?></span></td>
                 </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Order Erp Sync Status')) ?></th>
+                        <td><span id="order_erp_status"><?= $block->escapeHtml($erpStatus) ?></span></td>
+                    </tr>
                 <?= $block->getChildHtml() ?>
                 <?php if ($block->isSingleStoreMode() == false) : ?>
                     <tr>
