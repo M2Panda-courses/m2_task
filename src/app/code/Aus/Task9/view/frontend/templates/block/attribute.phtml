@@ -1,5 +1,11 @@
 <?php
 /**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
  * Product view template
  *
  * @var $block \Magento\Catalog\Block\Product\View\Description
@@ -16,20 +22,9 @@ if (!$_product instanceof \Magento\Catalog\Model\Product) {
 
 $_call = $block->getAtCall();
 $_code = $block->getAtCode();
-$_className = $block->getCssClass();
-$_attributeLabel = $block->getAtLabel();
 $_attributeType = $block->getAtType();
-$_attributeAddAttribute = $block->getAddAttribute();
 $sizeGuideVm = $block->getData('size_guide_vm');
 
-$renderLabel = true;
-if ($_attributeLabel == 'none') {
-    $renderLabel = false;
-}
-
-if ($_attributeLabel && $_attributeLabel == 'default') {
-    $_attributeLabel = $_product->getResource()->getAttribute($_code)->getStoreLabel();
-}
 if ($_attributeType && $_attributeType == 'text') {
     $_attributeValue = ($_helper->productAttribute($_product, $_product->$_call(), $_code))
         ? $_product->getAttributeText($_code)
@@ -42,12 +37,5 @@ $cmsBlock = $sizeGuideVm->getBlockByIdentifier($_attributeValue);
 ?>
 
 <?php if ($_attributeValue) :?>
-    <div class="product attribute <?= $block->escapeHtmlAttr($_className) ?>">
-        <?php if ($renderLabel) :?>
-            <strong class="type"><?= $block->escapeHtml($_attributeLabel) ?></strong>
-        <?php endif; ?>
-        <?php
-        echo html_entity_decode($cmsBlock->getContent());
-        ?>
-    </div>
+        <?= html_entity_decode($cmsBlock->getContent()); ?>
 <?php endif; ?>
