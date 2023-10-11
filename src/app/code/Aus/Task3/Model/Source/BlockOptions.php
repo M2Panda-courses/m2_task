@@ -2,8 +2,7 @@
 
 namespace Aus\Task3\Model\Source;
 
-use Aus\Task3\Model\ResourceModel\Block\CollectionFactory;
-
+use Magento\Cms\Model\ResourceModel\Block\CollectionFactory;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Eav\Model\Entity\Attribute\Source\SourceInterface;
 use Magento\Framework\Data\OptionSourceInterface;
@@ -23,7 +22,7 @@ class BlockOptions extends AbstractSource implements SourceInterface, OptionSour
         $collection = $this->collectionFactory->create();
 
         foreach ($collection as $item) {
-            $options[] = ['value' => $item->getValue(), 'label' => $item->getTitle()];
+            $options[] = ['value' => $item->getIdentifier(), 'label' => $item->getTitle()];
         }
 
         return $options;
