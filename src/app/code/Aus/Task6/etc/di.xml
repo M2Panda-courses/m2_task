@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\InventorySales\Model\GetBackorder">
+        <plugin name="aus_task6_edit_error_cart_message" type="Aus\Task6\Plugin\EditErrorCartMessage" sortOrder="2"/>
+    </type>
+</config>
