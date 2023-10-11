@@ -20,6 +20,14 @@ return [
                     'default' => 'AUD',
                     'allow' => 'AUD'
                 ]
+            ],
+            'carriers' => [
+                'flatrate' => [
+                    'title' => 'Express shipping'
+                ],
+                'freeshipping' => [
+                    'active' => '1'
+                ]
             ]
         ]
     ],
@@ -350,9 +358,15 @@ return [
         'Magento_Wishlist' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
+        'Aus_Task1' => 1,
+        'Aus_Task11' => 1,
         'Aus_Task13' => 1,
         'Aus_Task15' => 1,
-        'Aus_Task11' => 1,
+        'Aus_Task16' => 1,
+        'Aus_Task17' => 1,
+        'Aus_Task18' => 1,
+        'Aus_Task19' => 1,
+        'Aus_Task21' => 1,
         'Aus_Task3' => 1,
         'Aus_Task4' => 1,
         'Aus_Task5' => 1,
