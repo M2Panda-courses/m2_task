@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Aus\Task5\Api\Data\ErpSyncInterface" type="Aus\Task5\Model\ErpSync" />
-    <preference for="Aus\Task5\Api\Data\ErpSyncRepositoryInterface" type="Aus\Task5\Model\ErpSyncRepository"/>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="get_erp_status" type="Aus\Task5\Model\Plugin\OrderGet"/>
+        <plugin name="save_erp_status" type="Aus\Task5\Model\Plugin\OrderSave"/>
+    </type>
+    <preference for="Magento\Sales\Api\Data\OrderInterface" type="Aus\Task5\Model\Order" />
 </config>
