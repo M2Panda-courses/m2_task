@@ -58,7 +58,6 @@
                             <argument name="zone" xsi:type="string">item_view</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Theme\Block\Html\Title" name="page.main.title.task7" template="Aus_Task7::title.phtml"/>
                 </container>
                 <block class="Magento\Catalog\Pricing\Render" name="product.price.tier" after="product.info.price">
                     <arguments>
