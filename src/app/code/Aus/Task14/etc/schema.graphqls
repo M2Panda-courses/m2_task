@@ -1,0 +1,4 @@
+
+type Query {
+  productCmsBlockContent(id: Int!): String @resolver(class: "Aus\\Task14\\Model\\Resolver\\CmsContent")
+}
