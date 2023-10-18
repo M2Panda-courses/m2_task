@@ -7,10 +7,7 @@
 /**
  * @var $block \Magento\Theme\Block\Html\Title
  */
-$storeInfo = $block->getCacheKeyInfo();
-if ($storeInfo['1'] !== 'default'){
-    return;
-}
+
 $cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
 $titleHtml = '';
 if (trim($block->getPageHeading())) {

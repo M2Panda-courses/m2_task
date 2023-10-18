@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<type name="Magento\Theme\Block\Html\Title">
+    <plugin name="aus_task7_title_block_plugin" type="Aus\Task7\Plugin\TitleBlockPlugin"/>
+</type>
+    <type name="Magento\Catalog\Block\Product\View\Gallery">
+        <plugin name="aus_task7_gallery_plugin" type="Aus\Task7\Plugin\GalleryPlugin"/>
+    </type>
+</config>
