@@ -1,50 +1,66 @@
 <?php
+
 namespace Aus\Task15\Cron;
 
-use Magento\Framework\Api\SearchCriteriaBuilder;
-use Aus\Task19\Logger\AttributeCleanLogger;
+use Magento\Eav\Model\Config;
+use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
+
 class Cleanup
 {
     /**
-     * @var \Magento\Catalog\Api\ProductAttributeRepositoryInterface
+     * @var Config
      */
-    protected $attributeRepository;
+    private $eavConfig;
 
-    protected $searchCriteriaBuilder;
-
-    protected $logger;
-
+    /**
+     * @param Config $eavConfig
+     */
     public function __construct(
-        \Magento\Catalog\Api\ProductAttributeRepositoryInterface $attributeRepository,
-        SearchCriteriaBuilder $searchCriteriaBuilder,
-        AttributeCleanLogger $logger,
+        Config $eavConfig,
     ) {
-        $this->attributeRepository = $attributeRepository;
-        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
-        $this->logger = $logger;
+        $this->eavConfig = $eavConfig;
     }
 
+    /**
+     * Execute the cron job
+     *
+     * @return void
+     */
     public function execute()
     {
-        $searchCriteria = $this->searchCriteriaBuilder->create();
+        try {
+            $attributes = $this->getAllProductAttributes();
 
-        $attributes = $this->attributeRepository->getList($searchCriteria)->getItems();
+            foreach ($attributes as $attribute) {
+                $scope = $attribute->getIsGlobal();
 
-        foreach ($attributes as $attribute) {
-            $attributeId = $attribute->getAttributeId();
-            $attributeCode = $attribute->getAttributeCode();
-
-            if (strpos($attributeCode, 'task15') !== false) {
-                try {
-                    $this->attributeRepository->deleteById($attributeId);
-
-                    $this->logger->info('Атрибут ' . $attributeCode . ' було видалено.');
-                } catch (\Exception $e) {
-
-                    $this->logger->error('Помилка видалення атрибута ' . $attributeCode . ': ' . $e->getMessage());
+                if ($scope != '0' && $scope != '1' && $scope != '2') {
+                    $this->removeAttribute($attribute);
                 }
             }
-        }
+        } catch (\Exception $e) {}
+    }
 
+    /**
+     * Get all product attributes
+     *
+     * @return
+     */
+    private function getAllProductAttributes()
+    {
+        $entityType = $this->eavConfig->getEntityType('catalog_product');
+
+        return $entityType->getAttributeCollection();
+    }
+
+    /**
+     * Remove the attribute
+     *
+     * @param AbstractAttribute $attribute
+     * @return void
+     */
+    private function removeAttribute(AbstractAttribute $attribute)
+    {
+        $attribute->delete();
     }
 }

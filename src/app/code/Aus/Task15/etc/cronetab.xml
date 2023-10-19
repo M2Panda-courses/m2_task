@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
     <group id="task">
         <job name="aus_task15_cleanup_attributes" instance="Aus\Task15\Cron\Cleanup" method="execute">
-            <schedule>* * * * *</schedule>
+            <schedule>0 2,14 * * *</schedule>
         </job>
     </group>
 </config>
