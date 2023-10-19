@@ -4,6 +4,7 @@ namespace Aus\Task15\Cron;
 
 use Magento\Eav\Model\Config;
 use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
+use Aus\Task19\Logger\AttributeCleanLogger as Loger;
 
 class Cleanup
 {
@@ -13,12 +14,20 @@ class Cleanup
     private $eavConfig;
 
     /**
+     * @var Loger
+     */
+    private $logger;
+
+    /**
      * @param Config $eavConfig
+     * @param Loger $logger
      */
     public function __construct(
         Config $eavConfig,
+        Loger $logger
     ) {
         $this->eavConfig = $eavConfig;
+        $this->logger = $logger;
     }
 
     /**
@@ -29,16 +38,24 @@ class Cleanup
     public function execute()
     {
         try {
+            $this->logger->info('Cron job started.'); // Додайте повідомлення про початок виконання
+
             $attributes = $this->getAllProductAttributes();
+            $deleteCount = 0;
 
             foreach ($attributes as $attribute) {
                 $scope = $attribute->getIsGlobal();
 
                 if ($scope != '0' && $scope != '1' && $scope != '2') {
                     $this->removeAttribute($attribute);
+                    $deleteCount++;
                 }
             }
-        } catch (\Exception $e) {}
+
+            $this->logger->info('Cron job completed. Deleted ' . $deleteCount . ' attributes.');
+        } catch (\Exception $e) {
+            $this->logger->error('Error in cron job: ' . $e->getMessage());
+        }
     }
 
     /**

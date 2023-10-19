@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aus" translate="label" sortOrder="100">
+            <label>Aus Settings</label>
+        </tab>
+        <section id="task19" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Task 19 Settings</label>
+            <tab>aus</tab>
+            <resource>Aus_Task19::config_task19</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="logger" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Logger</label>
+                    <validate>validate-boolean</validate>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
+
+<!--<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">-->
+<!--<system>-->
+<!--    <tab id="blog" translate="label" sortOrder="10">-->
+<!--        <label>Blog</label>-->
+<!--    </tab>-->
+<!--    <section id="config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--        <class>separator-top</class>-->
+<!--        <label>Config</label>-->
+<!--        <tab>blog</tab>-->
+<!--        <resource>Panda_Blog::blog_config</resource>-->
+<!--        <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">-->
+<!--            <label>General</label>-->
+<!--            <field id="pagination" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">-->
+<!--                <label>Pagination</label>-->
+<!--                <comment>How many posts will be displayed on page</comment>-->
+<!--            </field>-->
+<!--            <field id="sidebar_post" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">-->
+<!--                <label>Sidebar Post</label>-->
+<!--                <comment>How many posts will be displayed on sidebar</comment>-->
+<!--            </field>-->
+<!--        </group>-->
+<!--    </section>-->
+
+<!--</system>-->
+<!--</config>-->
