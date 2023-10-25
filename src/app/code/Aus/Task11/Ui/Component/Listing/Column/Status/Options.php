@@ -3,7 +3,8 @@
 namespace Aus\Task11\Ui\Component\Listing\Column\Status;
 
 use Magento\Framework\Data\OptionSourceInterface;
-use Aus\Task5\Model\ResourceModel\ErpSync\CollectionFactory;
+use Magento\Sales\Model\ResourceModel\Order\CollectionFactoryInterface;
+
 
 /**
  * Class Options for Listing Column ERP Status
@@ -16,16 +17,16 @@ class Options implements OptionSourceInterface
     protected $options;
 
     /**
-     * @var CollectionFactory
+     * @var CollectionFactoryInterface
      */
     protected $collectionFactory;
 
     /**
      * Constructor
      *
-     * @param CollectionFactory $collectionFactory
+     * @param CollectionFactoryInterface $collectionFactory
      */
-    public function __construct(CollectionFactory $collectionFactory)
+    public function __construct(CollectionFactoryInterface $collectionFactory,)
     {
         $this->collectionFactory = $collectionFactory;
     }
