@@ -20,14 +20,6 @@ return [
                     'default' => 'AUD',
                     'allow' => 'AUD'
                 ]
-            ],
-            'carriers' => [
-                'flatrate' => [
-                    'title' => 'Express shipping'
-                ],
-                'freeshipping' => [
-                    'active' => '1'
-                ]
             ]
         ]
     ],
