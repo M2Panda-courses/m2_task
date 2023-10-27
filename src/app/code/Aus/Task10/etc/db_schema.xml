@@ -1,15 +1,7 @@
 <?xml version="1.0"?>
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="review_location" resource="default" engine="innodb" comment="Review location">
-        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
-                comment="ID"/>
-        <column xsi:type="int" name="review_id" nullable="false"
-                comment="Review Id"/>
-        <column xsi:type="text" name="location" nullable="false"
-                comment="Review location"/>
-        <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="id"/>
-        </constraint>
+    <table name="review_detail" resource="default" engine="innodb" comment="Review detail information">
+        <column xsi:type="varchar" name="location" nullable="true" length="128" comment="Review location"/>
     </table>
 </schema>
