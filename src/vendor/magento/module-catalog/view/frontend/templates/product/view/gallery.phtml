@@ -25,15 +25,10 @@ $helper = $block->getData('imageHelper');
 $mainImageData = $mainImage ?
     $mainImage->getData('medium_image_url') :
     $helper->getDefaultPlaceholderUrl('image');
-$storeInfo = $block->getCacheKeyInfo();
-$storeName = '';
-if ($storeInfo['1'] == 'default'){
-    $storeName = '_' . $storeInfo['1'];
-}
 
 ?>
 
-<div class="gallery-placeholder<?php echo $storeName; ?> _block-content-loading" data-gallery-role="gallery-placeholder">
+<div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
     <img
         alt="main product photo"
         class="gallery-placeholder__image"

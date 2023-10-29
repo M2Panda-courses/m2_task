@@ -29,6 +29,8 @@ $orderStoreDate = $block->formatDate(
 $customerUrl = $block->getCustomerViewUrl();
 
 $allowedAddressHtmlTags = ['b', 'br', 'em', 'i', 'li', 'ol', 'p', 'strong', 'sub', 'sup', 'ul'];
+
+$erpStatus = $order->getErpStatus();
 ?>
 
 <section class="admin__page-section order-view-account-information">
@@ -51,66 +53,70 @@ $allowedAddressHtmlTags = ['b', 'br', 'em', 'i', 'li', 'ol', 'p', 'strong', 'sub
             </div>
             <div class="admin__page-section-item-content">
                 <table class="admin__table-secondary order-information-table">
-                <tr>
-                    <th><?= $block->escapeHtml(__('Order Date')) ?></th>
-                    <td><?= $block->escapeHtml($orderAdminDate) ?></td>
-                </tr>
-                <?php if ($orderAdminDate != $orderStoreDate) : ?>
                     <tr>
-                        <th><?= $block->escapeHtml(__('Order Date (%1)', $block->getTimezoneForStore($order->getStore()))) ?></th>
-                        <td><?= $block->escapeHtml($orderStoreDate) ?></td>
+                        <th><?= $block->escapeHtml(__('Order Date')) ?></th>
+                        <td><?= $block->escapeHtml($orderAdminDate) ?></td>
                     </tr>
-                <?php endif;?>
-                <tr>
-                    <th><?= $block->escapeHtml(__('Order Status')) ?></th>
-                    <td><span id="order_status"><?= $block->escapeHtml($order->getStatusLabel()) ?></span></td>
-                </tr>
-                <?= $block->getChildHtml() ?>
-                <?php if ($block->isSingleStoreMode() == false) : ?>
+                    <?php if ($orderAdminDate != $orderStoreDate) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Order Date (%1)', $block->getTimezoneForStore($order->getStore()))) ?></th>
+                            <td><?= $block->escapeHtml($orderStoreDate) ?></td>
+                        </tr>
+                    <?php endif;?>
                     <tr>
-                        <th><?= $block->escapeHtml(__('Purchased From')) ?></th>
-                        <td><?= $block->escapeHtml($block->getOrderStoreName(), ['br']) ?></td>
+                        <th><?= $block->escapeHtml(__('Order Status')) ?></th>
+                        <td><span id="order_status"><?= $block->escapeHtml($order->getStatusLabel()) ?></span></td>
                     </tr>
-                <?php endif; ?>
-                <?php if ($order->getRelationChildId()) : ?>
-                    <tr>
-                        <th><?= $block->escapeHtml(__('Link to the New Order')) ?></th>
-                        <td>
-                            <a href="<?= $block->escapeUrl($block->getViewUrl($order->getRelationChildId())) ?>">
-                                <?= $block->escapeHtml($order->getRelationChildRealId()) ?>
-                            </a>
-                        </td>
-                    </tr>
-                <?php endif; ?>
-                <?php if ($order->getRelationParentId()) : ?>
-                    <tr>
-                        <th><?= $block->escapeHtml(__('Link to the Previous Order')) ?></th>
-                        <td>
-                            <a href="<?= $block->escapeUrl($block->getViewUrl($order->getRelationParentId())) ?>">
-                                <?= $block->escapeHtml($order->getRelationParentRealId()) ?>
-                            </a>
-                        </td>
-                    </tr>
-                <?php endif; ?>
-                <?php if ($order->getRemoteIp() && $block->shouldDisplayCustomerIp()) : ?>
-                    <tr>
-                        <th><?= $block->escapeHtml(__('Placed from IP')) ?></th>
-                        <td><?= $block->escapeHtml($order->getRemoteIp()); ?><?= $order->getXForwardedFor() ? ' (' . $block->escapeHtml($order->getXForwardedFor()) . ')' : ''; ?></td>
-                    </tr>
-                <?php endif; ?>
-                <?php if ($globalCurrencyCode !== $baseCurrencyCode) : ?>
-                    <tr>
-                        <th><?= $block->escapeHtml(__('%1 / %2 rate:', $globalCurrencyCode, $baseCurrencyCode)) ?></th>
-                        <td><?= $block->escapeHtml($order->getBaseToGlobalRate()) ?></td>
-                    </tr>
-                <?php endif; ?>
-                <?php if ($baseCurrencyCode !== $orderCurrencyCode && $globalCurrencyCode !== $orderCurrencyCode) : ?>
-                    <tr>
-                        <th><?= $block->escapeHtml(__('%1 / %2 rate:', $orderCurrencyCode, $baseCurrencyCode)) ?></th>
-                        <td><?= $block->escapeHtml($order->getBaseToOrderRate()) ?></td>
-                    </tr>
-                <?php endif; ?>
-            </table>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Order Erp Sync Status')) ?></th>
+                            <td><span id="order_erp_status"><?= $block->escapeHtml($erpStatus) ?></span></td>
+                        </tr>
+                    <?= $block->getChildHtml() ?>
+                    <?php if ($block->isSingleStoreMode() == false) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Purchased From')) ?></th>
+                            <td><?= $block->escapeHtml($block->getOrderStoreName(), ['br']) ?></td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if ($order->getRelationChildId()) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Link to the New Order')) ?></th>
+                            <td>
+                                <a href="<?= $block->escapeUrl($block->getViewUrl($order->getRelationChildId())) ?>">
+                                    <?= $block->escapeHtml($order->getRelationChildRealId()) ?>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if ($order->getRelationParentId()) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Link to the Previous Order')) ?></th>
+                            <td>
+                                <a href="<?= $block->escapeUrl($block->getViewUrl($order->getRelationParentId())) ?>">
+                                    <?= $block->escapeHtml($order->getRelationParentRealId()) ?>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if ($order->getRemoteIp() && $block->shouldDisplayCustomerIp()) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Placed from IP')) ?></th>
+                            <td><?= $block->escapeHtml($order->getRemoteIp()); ?><?= $order->getXForwardedFor() ? ' (' . $block->escapeHtml($order->getXForwardedFor()) . ')' : ''; ?></td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if ($globalCurrencyCode !== $baseCurrencyCode) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('%1 / %2 rate:', $globalCurrencyCode, $baseCurrencyCode)) ?></th>
+                            <td><?= $block->escapeHtml($order->getBaseToGlobalRate()) ?></td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if ($baseCurrencyCode !== $orderCurrencyCode && $globalCurrencyCode !== $orderCurrencyCode) : ?>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('%1 / %2 rate:', $orderCurrencyCode, $baseCurrencyCode)) ?></th>
+                            <td><?= $block->escapeHtml($order->getBaseToOrderRate()) ?></td>
+                        </tr>
+                    <?php endif; ?>
+                </table>
             </div>
         </div>
 

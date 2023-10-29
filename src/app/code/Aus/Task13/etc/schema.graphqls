@@ -1,8 +1,40 @@
-
 type Query {
-  exported(id: Int!, exported: Boolean!): Exported! @resolver(class: "Aus\\Task13\\Model\\Resolver\\Exported")
+  getOrderById(id: Int!): Order @resolver(class: "Aus\\Task13\\Model\\Resolver\\Order")
 }
 
-type Exported {
-  message: String!
+type Order {
+  created_at: String
+  grand_total: Float
+  id: String
+  increment_id: String
+  number: String
+  order_date: String
+  order_number: String
+  status: String
+  shipping_method: String
+  shipping_address: Address
+  billing_address: Address
+  payment_methods: [OrderPaymentMethod]
+  erp_status: String
+}
+
+type Address {
+  firstname: String
+  lastname: String
+  street: [String]
+  city: String
+  region: String
+  postcode: String
+  country_code: String
+}
+
+type OrderPaymentMethod {
+  name: String
+  type: String
+  additional_data: [KeyValue]
+}
+
+type KeyValue {
+  name: String
+  value: String
 }

@@ -8,7 +8,6 @@ namespace Magento\Sales\Block\Adminhtml\Order\View;
 use Magento\Eav\Model\AttributeDataFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Sales\Model\Order\Address;
-use Aus\Task5\Model\ResourceModel\ErpSync\Collection as ErpCollection;
 
 /**
  * @api
@@ -17,13 +16,6 @@ use Aus\Task5\Model\ResourceModel\ErpSync\Collection as ErpCollection;
  */
 class Info extends \Magento\Sales\Block\Adminhtml\Order\AbstractOrder
 {
-    /**
-     * ERP status repository
-     *
-     * @var \Aus\Task5\Model\ResourceModel\ErpSync\Collection
-     */
-    protected $erpCollection;
-
     /**
      * Customer service
      *
@@ -63,7 +55,6 @@ class Info extends \Magento\Sales\Block\Adminhtml\Order\AbstractOrder
      * @param array $data
      */
     public function __construct(
-        \Aus\Task5\Model\ResourceModel\ErpSync\Collection $erpCollection,
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Sales\Helper\Admin $adminHelper,
@@ -73,7 +64,6 @@ class Info extends \Magento\Sales\Block\Adminhtml\Order\AbstractOrder
         \Magento\Sales\Model\Order\Address\Renderer $addressRenderer,
         array $data = []
     ) {
-        $this->erpCollection = $erpCollection;
         $this->groupRepository = $groupRepository;
         $this->metadata = $metadata;
         $this->_metadataElementFactory = $elementFactory;
@@ -334,13 +324,5 @@ class Info extends \Magento\Sales\Block\Adminhtml\Order\AbstractOrder
         }
 
         return $out;
-    }
-
-    public function getErpStatus(){
-        $orderId = $this->getOrder()->getId();
-        $this->erpCollection->addFieldToFilter('order_id', $orderId);
-        $erpStatus = $this->erpCollection->getFirstItem();
-
-        return $erpStatus->getErpStatus();
     }
 }

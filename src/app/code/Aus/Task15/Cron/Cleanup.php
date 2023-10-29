@@ -1,50 +1,83 @@
 <?php
+
 namespace Aus\Task15\Cron;
 
-use Magento\Framework\Api\SearchCriteriaBuilder;
-use Aus\Task19\Logger\AttributeCleanLogger;
+use Magento\Eav\Model\Config;
+use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
+use Aus\Task19\Logger\AttributeCleanLogger as Loger;
+
 class Cleanup
 {
     /**
-     * @var \Magento\Catalog\Api\ProductAttributeRepositoryInterface
+     * @var Config
      */
-    protected $attributeRepository;
+    private $eavConfig;
 
-    protected $searchCriteriaBuilder;
+    /**
+     * @var Loger
+     */
+    private $logger;
 
-    protected $logger;
-
+    /**
+     * @param Config $eavConfig
+     * @param Loger $logger
+     */
     public function __construct(
-        \Magento\Catalog\Api\ProductAttributeRepositoryInterface $attributeRepository,
-        SearchCriteriaBuilder $searchCriteriaBuilder,
-        AttributeCleanLogger $logger,
+        Config $eavConfig,
+        Loger $logger
     ) {
-        $this->attributeRepository = $attributeRepository;
-        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
+        $this->eavConfig = $eavConfig;
         $this->logger = $logger;
     }
 
+    /**
+     * Execute the cron job
+     *
+     * @return void
+     */
     public function execute()
     {
-        $searchCriteria = $this->searchCriteriaBuilder->create();
+        try {
+            $this->logger->info('Cron job started.'); // Додайте повідомлення про початок виконання
 
-        $attributes = $this->attributeRepository->getList($searchCriteria)->getItems();
+            $attributes = $this->getAllProductAttributes();
+            $deleteCount = 0;
 
-        foreach ($attributes as $attribute) {
-            $attributeId = $attribute->getAttributeId();
-            $attributeCode = $attribute->getAttributeCode();
+            foreach ($attributes as $attribute) {
+                $scope = $attribute->getIsGlobal();
 
-            if (strpos($attributeCode, 'task15') !== false) {
-                try {
-                    $this->attributeRepository->deleteById($attributeId);
-
-                    $this->logger->info('Атрибут ' . $attributeCode . ' було видалено.');
-                } catch (\Exception $e) {
-
-                    $this->logger->error('Помилка видалення атрибута ' . $attributeCode . ': ' . $e->getMessage());
+                if ($scope != '0' && $scope != '1' && $scope != '2') {
+                    $this->removeAttribute($attribute);
+                    $deleteCount++;
                 }
             }
-        }
 
+            $this->logger->info('Cron job completed. Deleted ' . $deleteCount . ' attributes.');
+        } catch (\Exception $e) {
+            $this->logger->error('Error in cron job: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Get all product attributes
+     *
+     * @return
+     */
+    private function getAllProductAttributes()
+    {
+        $entityType = $this->eavConfig->getEntityType('catalog_product');
+
+        return $entityType->getAttributeCollection();
+    }
+
+    /**
+     * Remove the attribute
+     *
+     * @param AbstractAttribute $attribute
+     * @return void
+     */
+    private function removeAttribute(AbstractAttribute $attribute)
+    {
+        $attribute->delete();
     }
 }

@@ -265,15 +265,6 @@
                 <visible>false</visible>
             </settings>
         </column>
-        <column name="erp_status" class="Aus\Task11\Ui\Component\Listing\Column\ErpSyncStatus">
-            <settings>
-                <sortable>true</sortable>
-                <filter>select</filter>
-                <options class="Aus\Task11\Ui\Component\Listing\Column\Status\Options"/>
-                <dataType>select</dataType>
-                <label translate="true">ERP Sync Status</label>
-            </settings>
-        </column>
         <actionsColumn name="actions" class="Magento\Sales\Ui\Component\Listing\Column\ViewAction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

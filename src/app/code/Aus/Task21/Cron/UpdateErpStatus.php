@@ -1,37 +1,42 @@
 <?php
 namespace Aus\Task21\Cron;
 
-use Magento\Framework\Api\SearchCriteriaBuilder;
-use Psr\Log\LoggerInterface;
-use Aus\Task13\Model\ResourceModel\Exported\Collection as ExportedCollection;
+use Magento\Sales\Model\Order;
+
 class UpdateErpStatus
 {
     /**
-     * @var \Magento\Catalog\Api\ProductAttributeRepositoryInterface
+     * @var \Magento\Sales\Model\ResourceModel\Order\CollectionFactory
      */
-    protected $exportedCollection;
-
-
-    protected $logger;
+    private $orderCollectionFactory;
 
     public function __construct(
-        LoggerInterface $logger,
-        ExportedCollection $exportedCollection,
+        \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory
     ) {
-        $this->exportedCollection = $exportedCollection;
-        $this->logger = $logger;
+        $this->orderCollectionFactory = $orderCollectionFactory;
     }
 
     public function execute()
     {
-        $this->logger->info('Cron Order Export Started');
-        $exportOrderById = [];
+        $orders = $this->getNonExportedOrders();
 
-        $this->exportedCollection->addFieldToFilter('exported', '0');
-        foreach ($this->exportedCollection as $item){
-            $exportOrderById[] = $item->getOrderId();
+        foreach ($orders as $order) {
+            $this->simulateExport($order);
+
+            $order->setErpStatus('Success');
+            $order->save();
         }
+    }
 
-        $this->logger->info('Cron Order Export Finished');
+    private function getNonExportedOrders()
+    {
+        return $this->orderCollectionFactory->create()
+            ->addFieldToFilter('erp_status', 'Processing');
+    }
+
+    private function simulateExport(Order $order)
+    {
+        echo "Order Exported: " . $order->getIncrementId() . "\n";
     }
 }
+
